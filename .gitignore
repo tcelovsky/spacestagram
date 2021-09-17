@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 APIkey.md
+# api keys
+.env 
