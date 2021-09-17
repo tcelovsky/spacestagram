@@ -3,8 +3,8 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const BASE_URL = "https://api.nasa.gov/planetary/apod?api_key="
-const QUERY_URL = `${BASE_URL}${process.env.REACT_APP_NASA_API_KEY}`
+const BASE_URL = "https://images-api.nasa.gov/search?"
+const QUERY_URL = `${BASE_URL}q=earth%20from%20space&media_type=image`
 
 class App extends React.Component { 
 
