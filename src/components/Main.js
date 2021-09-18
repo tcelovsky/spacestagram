@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Card from './Card';
 
 const BASE_URL = "https://images-api.nasa.gov/search?"
 const QUERY_URL = `${BASE_URL}q=earth%20from%20space&media_type=image`
@@ -34,7 +35,7 @@ const Main = () => {
 
     return (
       <main>
-          Main
+          <Card />
       </main>
     );
 }
