@@ -1,4 +1,5 @@
 import MonthYear from './MonthYear';
+import Navbar from './Navbar';
 
 const Header = () => {
   return (
@@ -7,6 +8,7 @@ const Header = () => {
         <h3>
           NASA Astronomy Picture of the Day for <MonthYear />
         </h3>
+        <Navbar />
     </header>
   );
 }
