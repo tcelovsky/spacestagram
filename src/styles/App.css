@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
 .App {
   text-align: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Titillium Web", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  text-align: center;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.082);
+}
+
+main {
+  overflow: scroll;
+}
+
+li {
+  list-style-type: none;
 }
