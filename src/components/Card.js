@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Card = (item) => {
-    
     return (
       <figure>
           <figcaption>{item.item.title}</figcaption>
