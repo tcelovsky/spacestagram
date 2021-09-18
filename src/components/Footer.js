@@ -1,7 +1,9 @@
+import Navbar from './Navbar';
+
 const Footer = () => {
     return (
       <footer>
-          Footer
+          <Navbar />
       </footer>
     );
 }
