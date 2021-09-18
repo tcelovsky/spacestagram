@@ -25,7 +25,11 @@ const Main = () => {
         }
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
-          .then(data => console.log(data))
+          .then(data => console.log(data.collection.items))
+        //  description = data.collection.items[0].data[0].description
+        //  title = data.collection.items[0].data[0].title)
+        //  date = data.collection.items[0].data[0].date_created
+        //  href = data.collection.items[0].links[0].href
       }
 
     return (
