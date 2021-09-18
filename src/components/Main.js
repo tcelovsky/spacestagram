@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 
-const BASE_URL = "https://api.nasa.gov/planetary/apod?"
-const QUERY_URL = `${BASE_URL}&start_date=2021-09-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
-
 const Main = () => {
+    const BASE_URL = "https://api.nasa.gov/planetary/apod?"
+    let date = new Date()
+    let year = date.getFullYear()
+    let month = `${date.getMonth() + 1}`.padStart(2, "0")
+    let start_date = `${year}-${month}`
+    const QUERY_URL = `${BASE_URL}&start_date=${start_date}-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
+
     const [items, setItems] = useState([]);
 
     useEffect(() => {
