@@ -1,7 +1,11 @@
+import MonthYear from './MonthYear';
+
 const Header = () => {
   return (
     <header>
-        Header
+        <h1>
+          NASA Astronomy Picture of the Day for <MonthYear />
+        </h1>
     </header>
   );
 }
