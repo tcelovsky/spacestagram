@@ -2,25 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from './Card';
 
-const BASE_URL = "https://images-api.nasa.gov/search?"
-const QUERY_URL = `${BASE_URL}q=earth%20from%20space&media_type=image`
+const BASE_URL = "https://api.nasa.gov/planetary/apod?"
+const QUERY_URL = `${BASE_URL}&start_date=2021-09-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
 
 const Main = () => {
     const [items, setItems] = useState([]);
 
-    // useEffect(() => {
-    //     let isMounted = true;
-    //     if (isMounted) {
-    //       fetchImages();
-    //     }
-    //     return () => {
-    //       isMounted = false;
-    //     };
-    // }, [fetchImages]);
-
     useEffect(() => {
-        fetchImages()
-    })
+        let isMounted = true;
+        if (isMounted) {
+          fetchImages();
+        }
+        return () => {
+          isMounted = false;
+        };
+    }, []);
 
     const fetchImages = () => {
         const configObj = {
@@ -32,14 +28,14 @@ const Main = () => {
         }
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
-          .then(data => setItems([...items, data.collection.items]))
+          .then(data => setItems([...items, data]))
     }
 
     const generateCards = () => {
         return items.map(item => {
             return item.map(item => {
-                return <Link key={item.data[0].nasa_id} to={item.data[0].nasa_id} >
-                    <Card key={item.data[0].nasa_id} item={item}/>
+                return <Link key={item.date} to={item.date} >
+                    <Card key={item.date} item={item} />
                 </Link>
             }) 
         })
