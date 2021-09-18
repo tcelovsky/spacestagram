@@ -1,22 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 const BASE_URL = "https://images-api.nasa.gov/search?"
 const QUERY_URL = `${BASE_URL}q=earth%20from%20space&media_type=image`
 
 const Main = () => {
+    const [items, setItems] = useState([]);
+
+    // useEffect(() => {
+    //     let isMounted = true;
+    //     if (isMounted) {
+    //       fetchImages();
+    //     }
+    //     return () => {
+    //       isMounted = false;
+    //     };
+    // }, [fetchImages]);
 
     useEffect(() => {
-        let isMounted = true;
-        if (isMounted) {
-          fetchImages();
-        }
-        return () => {
-          isMounted = false;
-        };
-      }, []);
+        fetchImages()
+    })
 
-    const  fetchImages = () => {
+    const fetchImages = () => {
         const configObj = {
           method: "GET",
           headers: {
@@ -26,16 +31,20 @@ const Main = () => {
         }
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
-          .then(data => <Card key={data.collection.items.id} items={data.collection.items}/>)
-        //  description = data.collection.items[0].data[0].description
-        //  title = data.collection.items[0].data[0].title)
-        //  date = data.collection.items[0].data[0].date_created
-        //  href = data.collection.items[0].links[0].href
-      }
+          .then(data => setItems([...items, data.collection.items]))
+    }
+
+    const generateCards = () => {
+        return items.map(item => {
+            return item.map(item => {
+                return <Card key={item.data[0].nasa_id} item={item}/>
+            }) 
+        })
+    }
 
     return (
       <main>
-          <Card />
+          {generateCards()}
       </main>
     );
 }
