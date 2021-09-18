@@ -26,7 +26,7 @@ const Main = () => {
         }
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
-          .then(data => console.log(data.collection.items))
+          .then(data => <Card key={data.collection.items.id} items={data.collection.items}/>)
         //  description = data.collection.items[0].data[0].description
         //  title = data.collection.items[0].data[0].title)
         //  date = data.collection.items[0].data[0].date_created
