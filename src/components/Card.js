@@ -5,9 +5,9 @@ const Card = (item) => {
       <figure>
           <figcaption>{item.item.title}</figcaption>
           <img src={item.item.url} alt={item.item.title} />
-          <div>{item.item.copyright}</div>
-          <div>{item.item.date}</div>
-          <div>{item.item.explanation}</div>
+          <div className="copyright">{item.item.copyright}</div>
+          <div className="date">{item.item.date}</div>
+          <div className="explanation">{item.item.explanation}</div>
       </figure>
     );
   }
