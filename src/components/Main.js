@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Card from './Card';
 
 const BASE_URL = "https://images-api.nasa.gov/search?"
@@ -37,7 +38,9 @@ const Main = () => {
     const generateCards = () => {
         return items.map(item => {
             return item.map(item => {
-                return <Card key={item.data[0].nasa_id} item={item}/>
+                return <Link key={item.data[0].nasa_id} to={item.data[0].nasa_id} >
+                    <Card key={item.data[0].nasa_id} item={item}/>
+                </Link>
             }) 
         })
     }
