@@ -17,7 +17,8 @@ figcaption {
   padding-top: 10px;
 }
 
-figure img {
+figure img,
+iframe {
   width: 250px;
   height: 250px;
   margin: 5px;

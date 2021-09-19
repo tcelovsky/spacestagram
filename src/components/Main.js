@@ -55,7 +55,7 @@ const QUERY_URL = `${BASE_URL}&start_date=${start_date}-01&api_key=Qz4IQeu3yFMyz
 
   return loading ? (
     <Spinner animation="border" role="status" className="m-5">
-          <span className="visually-hidden">Loading...</span>
+      <span className="visually-hidden">Loading...</span>
     </Spinner>
   ) : <main>{generateCards()}</main>
 }
