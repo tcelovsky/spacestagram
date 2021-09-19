@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from './Card';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Main = () => {
     const BASE_URL = "https://api.nasa.gov/planetary/apod?"
@@ -11,6 +12,7 @@ const Main = () => {
     const QUERY_URL = `${BASE_URL}&start_date=2021-09-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
 
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         let isMounted = true;
@@ -33,6 +35,7 @@ const Main = () => {
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
           .then(data => setItems([...items, data]))
+          .then(setLoading(false))
     }
 
     const generateCards = () => {
@@ -41,15 +44,23 @@ const Main = () => {
                 return <Link key={item.date} to={item.date} >
                     <Card key={item.date} item={item} />
                 </Link>
-            }) 
+            })  
         })
     }
 
-    return (
-      <main>
-          {generateCards()}
-      </main>
-    );
+    if (loading) {
+      return (
+        <Spinner animation="border" role="status" className="m-5">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      );
+    } else {
+      return (
+        <main>
+            {generateCards()}
+        </main>
+      );
+    }
 }
   
 export default Main;
