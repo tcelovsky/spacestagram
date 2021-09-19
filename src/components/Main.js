@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Card from './Card';
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -41,9 +40,7 @@ const Main = () => {
     const generateCards = () => {
          return items.map(item => {
             return item.map(item => {
-                return <Link key={item.date} to={item.date} >
-                    <Card key={item.date} item={item} />
-                </Link>
+                return <Card key={item.date} item={item} />
             })  
         })
     }
