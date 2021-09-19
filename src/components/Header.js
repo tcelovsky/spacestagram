@@ -1,4 +1,5 @@
 import MonthYear from './MonthYear';
+import '../styles/Header.css';
 
 const Header = () => {
   return (
