@@ -46,6 +46,10 @@ p {
   font-size: 14px;
 }
 
+.copyright {
+  text-align: left;
+}
+
 a:link {
   text-decoration: none;
 }
