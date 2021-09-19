@@ -6,7 +6,7 @@ const MonthYear = () => {
     const month = date.toLocaleString('default', { month: 'long' });
     
     return (
-      <div>
+      <div className="current-month">
         {month} {year}  
       </div>
     );
