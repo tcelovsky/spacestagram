@@ -41,6 +41,10 @@ figure img {
   margin: 5px;
 }
 
+.likeButton {
+  text-align: right;
+}
+
 figure p {
   margin: 5px;
   padding: 0 10px 0 10px;
