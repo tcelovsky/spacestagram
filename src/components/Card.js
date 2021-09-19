@@ -5,7 +5,7 @@ const Card = (item) => {
     return (
       <figure>
           <figcaption>{item.item.title}</figcaption>
-          {item.item.media_type == "image" ? 
+          {item.item.media_type === "image" ? 
           <img src={item.item.url} alt={item.item.title} /> :
           <iframe src={item.item.url} title={item.item.title} />}
           <p className="copyright">{item.item.copyright}</p>
