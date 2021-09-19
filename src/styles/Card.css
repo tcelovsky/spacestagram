@@ -41,8 +41,15 @@ figure img {
   margin: 5px;
 }
 
+.date {
+  display: inline-block;
+  text-align: justify;
+}
+
 .likeButton {
-  text-align: right;
+  text-align: justify;
+  display: inline-block;
+  margin-left: 175px;
 }
 
 figure p {
