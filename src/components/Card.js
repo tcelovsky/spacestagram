@@ -1,4 +1,5 @@
 import '../styles/Card.css';
+import Like from './Like';
 
 const Card = (item) => {
     return (
@@ -7,6 +8,7 @@ const Card = (item) => {
           <img src={item.item.url} alt={item.item.title} />
           <p className="copyright">{item.item.copyright}</p>
           <p className="date">{item.item.date}</p>
+          <Like />
           <p className="explanation">{item.item.explanation}</p>
       </figure>
     );
