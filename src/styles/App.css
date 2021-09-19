@@ -21,6 +21,24 @@ main {
   padding: 20px;
 }
 
+@media only screen and (min-width: 968px) and (max-width: 1169px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 967px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 499px) and (orientation: portrait) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
 li {
   list-style-type: none;
 }

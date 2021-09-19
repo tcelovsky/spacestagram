@@ -11,24 +11,6 @@ figure {
   border-radius: 15px;
 }
 
-@media only screen and (min-width: 968px) and (max-width: 1169px) {
-  figure {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 967px) {
-  figure {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 300px) and (max-width: 499px) and (orientation: portrait) {
-  figure {
-    grid-template-columns: 1fr;
-  }
-}
-
 figcaption {
   font-size: 18px;
   font-weight: bold;
