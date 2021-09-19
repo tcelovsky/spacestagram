@@ -1,14 +1,23 @@
 figure {
-  text-decoration: none;
+  color: black;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  background-color: white;
+  grid-column: span 1;
+  grid-row: span 1;
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.082);
 }
 
 figcaption {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  text-decoration: none;
 }
 
 p {
-  font-size: 18px;
+  font-size: 17px;
+}
+
+a:link {
   text-decoration: none;
 }

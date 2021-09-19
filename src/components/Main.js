@@ -14,7 +14,7 @@ const Main = () => {
 
     useEffect(() => {
         let isMounted = true;
-        if (isMounted) {
+        if (isMounted && items.length === 0) {
           fetchImages();
         }
         return () => {

@@ -1,0 +1,24 @@
+nav {
+  padding: 10px;
+}
+
+nav ul {
+  padding-left: 0;
+}
+
+.nav-item {
+  display: inline;
+  padding: 10px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+}
+
+a.nav-link:active {
+  font-weight: bold;
+}
