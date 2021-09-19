@@ -2,13 +2,16 @@ nav ul {
   padding-left: 0;
 }
 
+.navbar {
+  justify-content: center !important;
+}
 .nav-item {
   display: inline;
   padding: 10px;
 }
 
 .nav-link {
-  color: black;
+  color: black !important;
 }
 
 .nav-link:hover {
