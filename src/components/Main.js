@@ -3,72 +3,61 @@ import Card from './Card';
 import Spinner from 'react-bootstrap/Spinner';
 
 const Main = () => {
-    const BASE_URL = "https://api.nasa.gov/planetary/apod?"
-    const date = new Date()
-    const year = date.getFullYear()
-    const month = `${date.getMonth() + 1}`.padStart(2, "0")
-    const start_date = `${year}-${month}`
-    const QUERY_URL = `${BASE_URL}&start_date=2021-09-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
+  const BASE_URL = "https://api.nasa.gov/planetary/apod?"
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = `${date.getMonth() + 1}`.padStart(2, "0")
+  const start_date = `${year}-${month}`
+  const QUERY_URL = `${BASE_URL}&start_date=2021-09-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
 
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        let isMounted = true;
-        if (isMounted && items.length === 0) {
-          fetchImages();
-        }
-        return () => {
-          isMounted = false;
-        };
+  useEffect(() => {
+    let isMounted = true;
+    if (isMounted && items.length === 0) {
+      fetchImages();
+    }
+    return () => {
+      isMounted = false;
+    };
     }, []);
 
-    const fetchImages = () => {
-        const configObj = {
-          method: "GET",
-          headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-          }
-        }
-        return fetch(QUERY_URL, configObj)
-          .then(response => response.json())
-          // .then(data => setItems([...items, data]))
-          .then(data => saveImages(data))
+  const fetchImages = () => {
+    const configObj = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
     }
+    return fetch(QUERY_URL, configObj)
+      .then(response => response.json())
+      .then(data => saveImages(data))
+  }
 
-    const saveImages = (data) => {
-      const images = []
-      data.forEach(item => {
-        images.push(item)
-      })
-      setItems([...items, images])
-      setLoading(false)
-      console.log(images)
-    }
+  const saveImages = (data) => {
+    const images = []
+    data.forEach(item => {
+      images.push(item)
+    })
+    setItems([...items, images])
+    setLoading(false)
+  }
 
-    const generateCards = () => {
-         return items.map(item => {
-            return item.map(item => {
-                return <Card key={item.date} item={item} />
-            })  
-        })
-    }
+  const generateCards = () => {
+    return items.map(item => {
+      return item.map(item => {
+          return <Card key={item.date} item={item} />
+      })  
+    })
+  }
 
-    if (loading) {
-      return (
-        <Spinner animation="border" role="status" className="m-5">
+  return loading ? (
+    <Spinner animation="border" role="status" className="m-5">
           <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      );
-    } else {
-      return (
-        <main>
-          {console.log(loading)}
-            {generateCards()}
-        </main>
-      );
-    }
+    </Spinner>
+  ) : <main>{generateCards()}</main>
 }
   
 export default Main;
