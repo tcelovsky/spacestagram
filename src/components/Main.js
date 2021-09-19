@@ -33,7 +33,6 @@ const Main = () => {
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
           .then(data => setItems([...items, data]))
-          // .then(generateCards())
     }
 
     const generateCards = () => {
@@ -49,7 +48,6 @@ const Main = () => {
     return (
       <main>
           {generateCards()}
-          {console.log(items)}
       </main>
     );
 }
