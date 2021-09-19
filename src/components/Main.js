@@ -33,8 +33,18 @@ const Main = () => {
         }
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
-          .then(data => setItems([...items, data]))
-          .then(setLoading(false))
+          // .then(data => setItems([...items, data]))
+          .then(data => saveImages(data))
+    }
+
+    const saveImages = (data) => {
+      const images = []
+      data.forEach(item => {
+        images.push(item)
+      })
+      setItems([...items, images])
+      setLoading(false)
+      console.log(images)
     }
 
     const generateCards = () => {
@@ -54,6 +64,7 @@ const Main = () => {
     } else {
       return (
         <main>
+          {console.log(loading)}
             {generateCards()}
         </main>
       );
