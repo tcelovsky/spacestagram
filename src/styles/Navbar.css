@@ -4,10 +4,10 @@ nav ul {
 
 .navbar {
   justify-content: center !important;
+  margin-bottom: 0;
 }
 .nav-item {
   display: inline;
-  padding: 10px;
 }
 
 .nav-link {
