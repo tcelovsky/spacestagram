@@ -8,7 +8,7 @@ const Main = () => {
   const year = date.getFullYear()
   const month = `${date.getMonth() + 1}`.padStart(2, "0")
   const start_date = `${year}-${month}`
-const QUERY_URL = `${BASE_URL}&start_date=${start_date}-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
+const QUERY_URL = `${BASE_URL}&start_date=${start_date}-01&api_key=Qz4IQeu3yFMyzoyIhLsLu7FOb14yepGykHhDPGQD`
 
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
