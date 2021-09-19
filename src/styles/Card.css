@@ -1,21 +1,35 @@
 figure {
   color: black;
   width: 300px;
-  height: 300px;
+  height: 500px;
   margin: 5px;
   background-color: white;
   grid-column: span 1;
   grid-row: span 1;
   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.082);
+  overflow: scroll;
 }
 
 figcaption {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  padding-top: 10px;
+}
+
+figure img {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+}
+
+figure p {
+  margin: 5px;
+  padding: 0 10px 0 10px;
+  text-align: justify;
 }
 
 p {
-  font-size: 17px;
+  font-size: 14px;
 }
 
 a:link {

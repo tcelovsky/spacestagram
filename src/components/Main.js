@@ -8,7 +8,7 @@ const Main = () => {
     const year = date.getFullYear()
     const month = `${date.getMonth() + 1}`.padStart(2, "0")
     const start_date = `${year}-${month}`
-    const QUERY_URL = `${BASE_URL}&start_date=${start_date}-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
+    const QUERY_URL = `${BASE_URL}&start_date=2021-09-01&api_key=${process.env.REACT_APP_NASA_API_KEY}`
 
     const [items, setItems] = useState([]);
 
@@ -33,10 +33,11 @@ const Main = () => {
         return fetch(QUERY_URL, configObj)
           .then(response => response.json())
           .then(data => setItems([...items, data]))
+          // .then(generateCards())
     }
 
     const generateCards = () => {
-        return items.map(item => {
+         return items.map(item => {
             return item.map(item => {
                 return <Link key={item.date} to={item.date} >
                     <Card key={item.date} item={item} />
@@ -48,6 +49,7 @@ const Main = () => {
     return (
       <main>
           {generateCards()}
+          {console.log(items)}
       </main>
     );
 }
