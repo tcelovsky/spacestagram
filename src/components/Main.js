@@ -21,7 +21,7 @@ const QUERY_URL = `${BASE_URL}&start_date=${start_date}-01&api_key=${process.env
     return () => {
       isMounted = false;
     };
-    }, []);
+    }, [fetchImages()]);
 
   const fetchImages = () => {
     const configObj = {
