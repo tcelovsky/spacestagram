@@ -8,6 +8,7 @@ figure {
   grid-row: span 1;
   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.082);
   overflow: scroll;
+  border-radius: 15px;
 }
 
 figcaption {

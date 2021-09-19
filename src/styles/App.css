@@ -7,10 +7,10 @@
   width: 100vw;
   font-family: "Titillium Web", sans-serif;
   color: black;
+  overflow: scroll;
 }
 
 main {
-  overflow: scroll;
   display: grid;
   grid-template-columns: repeat(4, calc(25% - 10px));
   grid-template-rows: auto;
@@ -23,19 +23,6 @@ main {
 
 li {
   list-style-type: none;
-}
-
-footer {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  z-index: 10;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .about {
